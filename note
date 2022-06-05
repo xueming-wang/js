@@ -1,0 +1,422 @@
+console.log(1 + 2);
+
+console.log('hello' + ' ' + 'world');
+
+console.log('Codecademy'.toUpperCase());   //print CODECADEMY
+
+console.log('    Remove whitespace   '.trim());   // Prints Remove whitespace
+
+console.log('Hey'.startsWith('H'));  // Prints true
+
+console.log(Math.random()); //random 0 - 1
+
+console.log(Math.floor(Math.random() *50));  //四舍五入的整数
+
+console.log(Math.ceil(43.8));     // >= x 的最小整数。 print 44
+
+console.log(Number.isInteger(2017)) // 是整数 返回true
+
+//var let const区别
+//var声明是全局作用域或函数作用域，而let和const是块作用域。
+
+//var: 先作用 后定义
+console.log(greeter);  
+var greeter = 'say hello';
+
+//var 全局局部变量
+var greeter = 'hey hi'; //全局变量
+function newFunction() { //函数变量
+    var hello = 'hello';
+}
+
+//var 变量可以重新声明和修改
+var greeter = 'hey hi';
+greeter = 'say Hello instead';
+
+//let现在已经成为变量声明的首选
+//let 是块级作用域 ,let非常适合用于 for循环内部的块级作用域
+let greeting = 'say Hi';
+let times = 4;
+if (times > 3) {
+    let hello = 'say Hello instead';
+    console.log(hello); // "say Hello instead"
+}
+console.log(hello); // hello is not defined
+
+//let 可以被修改但是不能被重新声明.
+let greeting = 'say Hi';
+greeting = 'say Hello instead';
+
+//在不同的作用域中定义了相同的变量,当使用let时，因为变量仅在其块级作用域内存在。
+let greeting = 'say Hi';
+if (true) {
+    let greeting = 'say Hello instead';
+    console.log(greeting); // "say Hello instead"
+}
+console.log(greeting); // "say Hi"
+
+//const 声明的变量在块级作用域内
+//像let声明一样，const声明只能在声明它们的块级作用域中访问
+//const 不能被修改并且不能被重新声明
+const greeting = 'say Hi';
+greeting = 'say Hello instead'; // error: Assignment to constant variable.
+
+var favoriteFood = 'pizza';  // new variable
+console.log(favoriteFood);
+
+let price;
+console.log(price); // Output: undefined
+price = 350;
+console.log(price); // Output: 350
+
+//const 
+const myName = 'Gilberto';  // a const variable cannot be reassigned
+
+//更新greeting.message的值，而不会返回错误。
+greeting.message = 'say Hello instead';
+
+const greeting = {
+    message: 'say Hi',
+    times: 4,
+};
+
+let num = 1;
+num += -= *= /=  -- ++  === !== ; //operator
+
+let myPet = 'armadillo';
+console.log('I own a pet ' + myPet + '.'); 
+// Output: 'I own a pet armadillo.'
+
+
+const myPet = 'armadillo';
+console.log(`I own a pet ${myPet}.`);  // ` ` a template literal is wrapped by backticks `
+
+const unknown1 = 'foo';  //return typeof 
+console.log(typeof unknown1); // Output: string
+ 
+const unknown2 = 10;
+console.log(typeof unknown2); // Output: number
+
+
+'XUE'.toLowerCase();  
+
+//三元表达
+userName ? console.log(`Hello, ${userName}!`) : console.log('Hello!');
+
+//0-8随机整数
+let randomNumber = Math.floor(Math.random() * 8);
+
+
+//witch case
+let randomNumber = Math.floor(Math.random() * 8);
+console.log(randomNumber);
+let eightBall = '';
+
+switch(randomNumber) {
+  case 0:
+    eightBall = 'It is certain';
+    break;
+  case 1:
+    eightBall = 'It is decidedly so';
+    break;
+  case 2:
+    eightBall ='Reply hazy try again';
+    break;
+  case 3:
+    eightBall ='Cannot predict now';
+    break;
+  case 4:
+    eightBall ='Do not count on it';
+    break;
+  case 5:
+    eightBall ='My sources say no';
+    break;
+  case 6:
+    eightBall ='Outlook not so good';
+    break;
+  case 7:
+    eightBall ='Signs point to yes';
+    break;
+  default:
+}
+console.log(eightBall);
+
+
+//if /else if
+let randomNumber = Math.floor(Math.random() * 8);
+console.log(randomNumber);
+let eightBall = '';
+
+if(randomNumber === 0) 
+    eightBall = 'It is certain';
+else if (randomNumber === 1) 
+     eightBall = 'It is decidedly so';
+else
+     eightBall ='Reply hazy try again';
+console.log(eightBall);
+
+
+//可用 不建议
+greetWorld(); // Output: Hello, World!
+ 
+function greetWorld() {
+  console.log('Hello, World!');
+}
+
+//定义函数 function
+function getReminder() {
+    console.log('Water the plants.');
+}
+
+//函数加入参数
+let name;
+function sayThanks(name) {
+  console.log('Thank you for your purchase ' + name + '! We appreciate your business.');
+}
+
+sayThanks('Cole');
+
+//Default Parameters
+function greeting (name = 'stranger') {
+    console.log(`Hello, ${name}!`)
+  }
+  greeting('Nick') // Output: Hello, Nick!
+  greeting() // Output: Hello, stranger!
+
+//调用
+function monitorCount(rows, columns) {
+    return rows * columns;
+}
+function costOfMonitors(rows, columns) {
+    return monitorCount(rows, columns) * 200;
+}
+const totalCost = costOfMonitors(5, 4);
+console.log(totalCost);
+
+
+//函数表达式
+var/let/const 变量=function(参数){
+    要执行的代码
+}
+//exmple:
+const fn=function(text){
+    console.log(text);
+};
+fn('直接调用');
+
+const plantNeedsWater = function(day){
+    if (day === 'Wednesday')
+      return true;
+    else
+      return false;
+  }
+  plantNeedsWater('Tuesday');
+  console.log(plantNeedsWater('Tuesday')); //output: false
+
+  //=> 函数
+  const rectangleArea = (width, height) => {
+    let area = width * height;
+    return area;
+  };
+
+
+  //
+//ZERO PARAMETERS
+const functionName = () => {}
+//ONE PARAMETER
+const funetionname = parame => {}
+//TWO OR MORE PARAMETERS
+const functionName = (parameone, parametwo) => {}
+
+//SINGLE-LINE BLOCK 隐士返回
+const sumNumbers = number => number + number;
+//MULTI-LINE BLOCK
+const sumNumbers = number => {
+    const sum = number + number;
+    return sum;
+}
+
+//下面两个函数相同
+const squareNum = (num) => {  
+    return num * num;
+};
+const squareNum = num => num * num;
+
+//例子
+const plantNeedsWater = day => day ==='Wednesday' ? true : false;
+
+//l例子
+function getComputerChoice() {
+    let num = Math.floor(Math.random() * 3);
+    if (num === 0) {
+      return 'rock';
+    }else if (num === 1) {
+      return 'paper';
+    }else if (num === 2) {
+      return 'scissors';
+    }
+  }
+  console.log(getComputerChoice());
+
+  //复杂例子
+  const getUserChoice = userInput => {
+    userInput = userInput.toLowerCase();
+    if (userInput === 'rock' || userInput ===     'paper' || userInput === 'scissors') {
+      return userInput;
+    } else { 
+      console.log("ERROR");
+    }
+  };
+  
+  function getComputerChoice() {
+    let num = Math.floor(Math.random() * 3);
+    if (num === 0) {
+      return 'rock';
+    }else if (num === 1) {
+      return 'paper';
+    }else if (num === 2) {
+      return 'scissors';
+    }
+  }
+  console.log(getComputerChoice());
+  
+  function determineWinner(userChoice, computerChoice) {
+    if (userChoice === computerChoice)
+      return 'ok';
+  }
+  console.log(determineWinner(getUserChoice('rock'),getComputerChoice()));
+
+  //Block Scope
+  const logSkyColor = () => {
+    let color = 'blue'; 
+    console.log(color); // blue 
+  };
+  logSkyColor(); // blue 
+  console.log(color); // !!!!! color 在块内 不能使用 Error
+
+  //全局变量从新定义值
+  let num = 50;
+  const logNum = () => {
+    num = 100; // Take note of this line of code
+    console.log(num);
+  };
+   
+  logNum(); // Prints 100
+  console.log(num); // Prints 100
+  
+
+  //if 成立 块内值改变, 块外不边 用了let 就是新的值 只是名字相同
+  const logVisibleLightWaves = () => {
+    let lightWaves = 'Moonlight';
+    let region = 'The Arctic';
+    if(region === 'The Arctic') {
+      let lightWaves = 'Northern Lights'; 
+      console.log(lightWaves);  //Northern Lights
+    }
+    console.log(lightWaves); //Moonlight
+  };
+  
+  logVisibleLightWaves();
+
+
+  //数组 字符串
+  const hello = 'Hello World';
+  console.log(hello[6]); // Output: W 
+  
+//数组
+let newYearsResolutions = ['Keep a journal', 10 , true];
+const listItem = newYearsResolutions[1];  //listIteam == 10;
+console.log(newYearsResolutions[0]);  //Keep a journal
+
+//更改元素
+let seasons = ['Winter', 'Spring', 'Summer', 'Fall'];
+seasons[3] = 'Autumn';  //改变第四个元素
+seasons = ['Winter'];  //改变整个数组
+
+  //const 可改变数值, 不能从新定义数组
+const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
+utensils[3] = 'Spoon'; 
+utensils = ['221']; //ERROR !!
+
+//数组长度
+const newYearsResolutions = [1, 2];
+console.log(newYearsResolutions.length); // Output: 2
+
+//push 添加  const 可用
+const chores = ['wash dishes', 'do laundry', 'take out trash'];
+chores.push('1', '2');
+console.log(chores);
+//out put : [ 'wash dishes', 'do laundry', 'take out trash', '1', '2' ]
+
+//.pop() 删除数组的最后一项。
+const newItemTracker = ['item 0', 'item 1', 'item 2'];
+const removed = newItemTracker.pop(); // newItemTracker.pop();
+console.log(newItemTracker); 
+// Output: [ 'item 0', 'item 1' ]
+console.log(removed);
+// Output: item 2
+
+//.shift() 删除数组的第一项
+//.unshift('popcorn'); 添加新的元素在开始
+
+//范围输出 但不改变数组  -2 后面两个  2, -1 正三和倒数第二位
+console.log(groceryList.slice(1, 4));  //first, last+1
+
+//取index 
+const groceryList = [0, 1, 2, 3, 4];
+const pastaIndex =  groceryList.indexOf(2);
+console.log(pastaIndex);  //2
+
+//函数改变元素
+const concept = ['arrays', 'can', 'be', 'mutated'];
+function changeArr(arr){
+  arr[3] = 'MUTATED';
+}
+changeArr(concept);
+//删除最后一个
+const removeElement = newArr => {
+  newArr.pop();
+}
+removeElement(concept);
+
+//.splice array.splice(indexToStart, numberOfIndices, 'stringToAdd');
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// inserts at index 1  在[1]添加
+console.log(months);  
+// expected output: Array ["Jan", "Feb", "March", "April", "June"]
+months.splice(4, 1, 'May');
+// replaces 1 element at index 4 //把[4] 改变一个元素
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+
+//把所有字符串用空格连接
+console.log(secretMessage.join(' '));
+
+//当一个数组包含另一个数组时:嵌套数组
+const nestedArr = [[1], [2, 3]];
+console.log(nestedArr[1]); // Output: [2, 3]
+console.log(nestedArr[1][0]); // Output: 2
+
+const numberClusters = [[1, 2], [3, 4], [5, 6]];
+const target = numberClusters[2][1];  //target = 6
+
+//for 循环
+for(let num = 5; num <= 10; num++) {
+  console.log(num);
+}
+//例子
+const vacationSpots = ['Bali', 'Paris', 'Tulum'];
+// Write your code below
+for(let i = 0; i <  vacationSpots.length; i++) {
+  console.log('I would love to visit ' + vacationSpots[i] );
+}
+
+//随机挑选一个元素 如果不是他就一直循环
+const cards = ['diamond', 'spade', 'heart', 'club'];
+let currentCard;
+while(currentCard != 'spade') {
+  currentCard = cards[Math.floor(Math.random() * 4)];
+  console.log(currentCard);
+}
